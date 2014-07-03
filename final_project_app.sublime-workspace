@@ -1,0 +1,447 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pri",
+				"primes_arr"
+			],
+			[
+				"input",
+				"input_arr"
+			],
+			[
+				"in",
+				"int_arr"
+			],
+			[
+				"inpu",
+				"input_arr"
+			],
+			[
+				"inp",
+				"input_str"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"tex",
+				"text-decoration"
+			],
+			[
+				"margi",
+				"margin-right"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"email",
+				"email_valid"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"A",
+				"ActiveRecord"
+			],
+			[
+				"backgro",
+				"background-color"
+			],
+			[
+				"word",
+				"word_frequency"
+			],
+			[
+				"divisibl",
+				"divisible_by_range"
+			],
+			[
+				"ma",
+				"max_range"
+			],
+			[
+				"max",
+				"max_range"
+			],
+			[
+				"large",
+				"largest_prime_factor"
+			],
+			[
+				"attr",
+				"attr_accessor"
+			],
+			[
+				"att",
+				"attr_accessor"
+			],
+			[
+				"at",
+				"attr_accessor"
+			],
+			[
+				"repea",
+				"repeat_killer"
+			],
+			[
+				"make",
+				"make_hash"
+			],
+			[
+				"nam",
+				"namer"
+			],
+			[
+				"type",
+				"typeof"
+			],
+			[
+				"va",
+				"varName2"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"list",
+				"list-style-type"
+			],
+			[
+				"heigh",
+				"height"
+			],
+			[
+				"li",
+				"list-style-type"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"u",
+				"upper-latin"
+			],
+			[
+				"da",
+				"decimal-leading-zero"
+			],
+			[
+				"d",
+				"disc"
+			],
+			[
+				"top",
+				"text-top"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"background",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/markbennett/Sites/final-project/config/environments/development.rb",
+		"/Users/markbennett/Sites/final-project/app/views/users/new.html.erb",
+		"/Users/markbennett/Sites/final-project/db/migrate/20140621155950_create_users.rb",
+		"/Users/markbennett/Sites/final-project/app/models/users.rb",
+		"/Users/markbennett/Sites/final-project/Gemfile",
+		"/Users/markbennett/Documents/ProjectEuler/PE.7.rb",
+		"/Users/markbennett/Documents/ProjectEuler/PE.10.rb",
+		"/Users/markbennett/Documents/ProjectEuler/PE.8.rb",
+		"/Users/markbennett/Sites/Micro-Blog/views/layout.erb",
+		"/Users/markbennett/Sites/Micro-Blog/views/_detele_post_button.erb",
+		"/Users/markbennett/Sites/Micro-Blog/views/about.erb",
+		"/Users/markbennett/Sites/Micro-Blog/db/migrate/20140426140428_create_users_table.rb",
+		"/Users/markbennett/Sites/Micro-Blog/views/create.erb",
+		"/Users/markbennett/Sites/Micro-Blog/Gemfile",
+		"/Users/markbennett/Sites/Micro-Blog/db/schema.rb",
+		"/Users/markbennett/Sites/Micro-Blog/blogging_app.rb",
+		"/Users/markbennett/Sites/Micro-Blog/config.ru",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/views/sign_up.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/views/home.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/views/layout.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/public/styles.css",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/models.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/blogging_app.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/db/migrate/20140426140428_create_users_table.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/db/migrate/20140426141849_create_posts_table.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/db/migrate/20140426142351_create_comments_table.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/db/migrate/20140426142933_create_relationships_table.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/db/schema.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/views/create",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/db/migrate/20140417232835_create_users_table.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/Gemfile",
+		"/Users/markbennett/NYCDA/nycda_assignments/Micro-Blog/Rakefile",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/views/home.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/views/profile.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson12Hw/views/home.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson12Hw/proposal_tracker_app.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson12Hw/views/layout.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson12Hw/db/migrate/20140425000323_create_proposals_table.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/app.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson12Hw/public/styles.css",
+		"/Users/markbennett/Documents/ProjectEuler/PE.6.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/Gemfile",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson12Hw/Gemfile",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/Rakefile",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson12Hw/Rakefile",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/views/layout.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/models.rb",
+		"/Users/markbennett/NYCDA/TestProject/test.rb",
+		"/Users/markbennett/Documents/ProjectEuler/PE.5.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/db/schema.rb",
+		"/Users/markbennett/Documents/Dash/business_website.html",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/db/migrate/20140422232339_create_proposals_table.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/public/styles.css",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson11Hw/db/migrate/20140418000514_create_users_tabadd_timestamp_to_users_table.rb",
+		"/Users/markbennett/NYCDA/WebApp/public/styles.css",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/app.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/views/home.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/views/music.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/views/layout.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/public/styles.css",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/images/background.jpg",
+		"/Users/markbennett/NYCDA/WebApp/Gemfile",
+		"/Users/markbennett/NYCDA/WebApp/app.rb",
+		"/Users/markbennett/NYCDA/WebApp/views/home.erb",
+		"/Users/markbennett/NYCDA/WebApp/views/layout.erb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/public/syles.css",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/Gemfile",
+		"/Users/markbennett/NYCDA/King_at_Bay/nav.css",
+		"/Users/markbennett/NYCDA/TestProject/onion.html",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson8Hw/hw8.rb",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson6Hw/example.html",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson6Hw/example.css",
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson6Hw/example.js",
+		"/Users/markbennett/NYCDA/WebApp/views/stuff.erb",
+		"/Users/markbennett/Documents/ProjectEuler/PE.4.rb",
+		"/Users/markbennett/Documents/ProjectEuler/PE.3.rb",
+		"/Users/markbennett/NYCDA/King_at_Bay/home.css",
+		"/Users/markbennett/NYCDA/King_at_Bay/home.html",
+		"/Users/markbennett/NYCDA/WebApp/views.erb",
+		"/Users/markbennett/NYCDA/WebApp/home.erb",
+		"/Users/markbennett/Documents/Dash/personal_website.html",
+		"/Users/markbennett/Documents/Dash/blog_theme.html",
+		"/Users/markbennett/NYCDA/TestProject/onion.js",
+		"/Users/markbennett/NYCDA/TestProject/hw7.rb",
+		"/Users/markbennett/NYCDA/TestProject/hw8.rb",
+		"/Users/markbennett/NYCDA/PersonalSite/my_library.js",
+		"/Users/markbennett/NYCDA/TestProject/TestCode.html",
+		"/Users/markbennett/NYCDA/PersonalSite/navigation.html",
+		"/Users/markbennett/NYCDA/PersonalSite/navigation.css",
+		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesHome.css",
+		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesHome.html",
+		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesArticle.css",
+		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesArticle.html",
+		"/Users/markbennett/NYCDA/PersonalSite/homepage.css",
+		"/Users/markbennett/NYCDA/PersonalSite/homepage.html",
+		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesArticle",
+		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesHome",
+		"/Users/markbennett/NYCDA/page2.html",
+		"/Users/markbennett/Desktop/page1.html",
+		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimes",
+		"/Users/markbennett/Desktop/page2.html",
+		"/Users/markbennett/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\n",
+			"end",
+			"t",
+			"\n",
+			"string",
+			"\n  ",
+			"t",
+			"teal"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.453610503925,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 239.0,
+	"status_bar_visible": true
+}
