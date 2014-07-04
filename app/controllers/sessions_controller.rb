@@ -3,10 +3,13 @@ class SessionsController < ApplicationController
   end 
 
   def create 
-    @user = User.where(email: params[:email]).first
-    if @user && @user.authenticate(params[:password])
+    @user = User.where(email: params[:user][:email]).first
+    puts "FIND ME"
+    puts @user.inspect
+    if @user && @user.authenticate(params[:user][:password])
       session[:current_user_id] = @user.id
-      redirect_to users_path
+      flash[:notice] = "Login successful"
+      redirect_to new_user_path
     else 
       flash[:alert] = 'Incorrect email or password'
       redirect_to root_path
@@ -14,7 +17,13 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:current_user_id] = nil
+    @_current_user = session[:current_user_id] = nil
     redirect_to root_path 
   end 
+  
+  private 
+    def user_params 
+      params.require(:user)
+      .permit(:email, :password)
+    end
 end
