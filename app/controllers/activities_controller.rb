@@ -11,14 +11,14 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(params[:activity])
     @activity.owner = current_user 
     if @activity.save 
-      redirect_to user_path
+      redirect_to user_path(current_user)
     else
       render new_activity_path
     end
   end
   
   def edit
-    before_action :activity_authentication
+    #before_action :activity_authentication
     @activity = Activity.find(params[:id])
   end
 
@@ -55,6 +55,6 @@ private
   def activity_authorization
     unless current_user == Activity.find(params[:id]).owner
       flash[:error] = "You are not authorized to edit another user's activity"
-      redirect_to user_path
+      redirect_to user_path(current_user)
     end
   end

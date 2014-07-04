@@ -11,14 +11,14 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     @event.host_id = current_user 
     if @event.save 
-      redirect_to user_path
+      redirect_to user_path(current_user)
     else
       render new_event_path
     end
   end
   
   def edit
-    before_action :event_authentication
+    #before_action :event_authentication
     @event = Event.find(params[:id])
   end
 

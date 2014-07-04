@@ -4,17 +4,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     
     if @user.save 
-      redirect_to user_path
+      redirect_to user_path(current_user)
     else
       render new_user_path
     end
   end
 
   def edit
-    before_action :user_authorization
+    # before_action :user_authorization
     @user = User.find(params[:id])
   end
   
@@ -52,6 +52,6 @@ private
   def user_authorization
     unless current_user == User.find(params[:id])
       flash[:error] = "You are not authorized to edit another user's profile"
-      redirect_to user_path
+      redirect_to user_path(current_user)
     end
   end
