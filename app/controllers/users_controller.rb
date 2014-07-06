@@ -30,7 +30,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-
+    @activities = @user.hosted_activities.order("created_at DESC")
+    @events = @user.hosted_events.order("created_at DESC")
   end
 
   def destroy 

@@ -1,15 +1,11 @@
 class EventsController < ApplicationController
-  def index
-    @events = Event.order("date DESC")
-  end
-
   def new
     @event = Event.new
   end
 
   def create
-    @event = Event.new(params[:event])
-    @event.host_id = current_user 
+    @event = Event.new(event_params)
+    @event.host = current_user 
     if @event.save 
       redirect_to user_path(current_user)
     else
@@ -49,7 +45,7 @@ end
 private 
   def event_params 
     params.require(:event)
-    .permit(:description, :date)
+    .permit(:description, :date, :users)
   end
 
   def event_authorization

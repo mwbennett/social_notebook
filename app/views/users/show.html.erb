@@ -1,2 +1,26 @@
-<h1><%= "#{@user.first_name} #{@user.last_name}'s Profile" %></h1>
-<p>List of recent events...</p>
+<h2><%= "#{@user.first_name} #{@user.last_name}'s Profile" %></h2>
+
+<div id='activities-box'>
+  <% @activities.each do |a| %>
+    <div class='activity-box'>
+      <h4><%= a.description %></h4>
+      <p>
+        <%= a.created_at %>
+      </p>
+    </div>  
+  <% end %>
+
+  <button><%= link_to 'New Activity', new_activity_path %></button>
+</div>
+
+<div id='events-box'>
+  <% @events.each do |a| %>
+    <div class='event-box'>
+      <h4><%= a.description %></h4>
+      <p><%= a.date %></p>
+    </div>  
+  <% end %>
+
+  <button><%= link_to 'New Event', new_event_path %></button>
+</div>
+
