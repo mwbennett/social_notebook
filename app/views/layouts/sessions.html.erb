@@ -1,83 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
     <title>Social Notebook</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
+    <div id="welcome-wrapper">
+      <div id="welcome-wrapper-inner">
 
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">About</h3>
-              <ul class="nav masthead-nav">
-                <!-- <li class="active"><a href="#"></a></li> -->
-                <%= yield %>
-              </ul>
-            </div>
-          </div>
-          <div>  
+        <div id="header">
+          <h3 id="app-title">Social Notebook</h3>
+        </div>
+          
+        <div id="welcome-content"> 
+          <div id="welcome-alerts">
             <strong><%= session[:user_id] if session[:user_id] %></strong>
             <strong><%= "No user logged in" unless session[:user_id] %></strong>
             <p class="notice"><%= flash[:notice] if flash[:notice] %></p>
             <p class="alert"><%= flash[:alert] if flash[:alert] %></p>
           </div>
-          <div class="inner cover">
-            <h1 class="cover-heading">Get in the game.</h1>
-            <p class="lead">Social Notebook helps you keep in touch with your people. Stop forgetting to schedule drinks with your old friend or your brother who lives in the next town over. Easily track your activities, schedule events, and stop flaking on the people you actually want to see.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
+        </div>
+        
+        <div id="welcome-title">
+          <h1 class="cover-heading">Stop flaking.</h1>
+        </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Created by <a href="http://github.com/mwbennett">Mark Bennett</a>.</p>
-            </div>
-          </div>
+        <div id="welcome-message">  
+          <p class="lead">Social Notebook helps you keep in touch with your people. Stop forgetting to catch up with that old friend you ran into last week, and don't let your montly dinner with your brother slip your mind. Easily track your activities, schedule events, and stop missing the people you actually want to see.</p>
+        </div>
 
+        <div id="welcome-forms">
+          <%= yield %>
         </div>
 
       </div>
-
     </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/docs.min.js"></script>
+    <div id="footer">
+      <div class="footer-inner">
+        <p>Created by <a href="http://github.com/mwbennett">Mark Bennett</a>.</p>
+      </div>
+    </div>
+    
   </body>
 </html>

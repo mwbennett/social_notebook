@@ -1,9 +1,23 @@
-<h2><%= "#{@user.first_name} #{@user.last_name}'s Profile" %></h2>
 
+<div class='title'>
+  <h3>Activities</h3>
+</div>
 <div id='activities-box'>
   <% @activities.each do |a| %>
     <div class='activity-box'>
       <h4><%= a.description %></h4>
+      <p>
+      <% if a.users.count > 3 %>
+        <%= "With #{a.users.first.first_name} #{a.users.first.last_name}, 
+        #{a.users.second.first_name} #{a.users.second.last_name}, 
+        #{a.user.third.first_name} #{a.users.third.last_name}, and #{a.users.count - 3} others." %>
+      <% else %>
+        With 
+          <% a.users.each do |u| %>
+            <%= "#{u.first_name} #{u.last_name}, " %>
+          <% end %>
+      <% end %> 
+      </p>
       <p>
         <%= a.created_at %>
       </p>
@@ -13,11 +27,26 @@
   <button><%= link_to 'New Activity', new_activity_path %></button>
 </div>
 
+<div class='title'>
+  <h3>Events</h3>
+</div>
 <div id='events-box'>
   <% @events.each do |a| %>
     <div class='event-box'>
       <h4><%= a.description %></h4>
       <p><%= a.date %></p>
+      <p>
+      <% if a.users.count > 3 %>
+        <%= "With #{a.users.first.first_name} #{a.users.first.last_name}, 
+        #{a.users.second.first_name} #{a.users.second.last_name}, 
+        #{a.user.third.first_name} #{a.users.third.last_name}, and #{a.users.count - 3} others." %>
+      <% else %>
+        With 
+        <% a.users.each do |u| %>
+          <%= "#{u.first_name} #{u.last_name}, " %>
+        <% end %>
+      <% end %> 
+      </p>
     </div>  
   <% end %>
 
