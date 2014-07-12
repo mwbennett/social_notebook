@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Social Notebook</title>
-
+    <%=stylesheet_link_tag 'application' %>
   </head>
 
   <body>
@@ -11,9 +11,9 @@
         <div id="sidebar-wrapper" >
           <div id="current-user-space">
             <div id="current-user">
-              <div id="user-name"><%= "#{@user.first_name} #{@user.last_name}" %></div>
-              <div id="user-edit"><%= link_to 'Edit', edit_user_path %></div>
-              <div id="user-signout"><%= link_to 'Signout', signout_path %></div>
+              <div class="user-name"><%= "#{@user.first_name} #{@user.last_name}" %></div>
+              <div class="user-edit"><%= link_to 'Edit', edit_user_path %></div>
+              <div class="user-signout"><%= link_to 'Signout', signout_path %></div>
             </div>
           </div>
           <div id="sidebar-menu">
