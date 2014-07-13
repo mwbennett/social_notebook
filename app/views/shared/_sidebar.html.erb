@@ -1,18 +1,27 @@
-<div id="sidebar">
+
+<div id="sidebar" class="col-md-2">
   <div id="sidebar-wrapper" >
     <div id="current-user-space">
       <div id="current-user">
-        <div class="user-name"><%= "#{@user.first_name} #{@user.last_name}" %></div>
-        <div class="user-edit"><%= link_to 'Edit', edit_user_path %></div>
+        <div class="user-name">
+          <h4><%= @current_user.full_name %></h4>
+        </div>
+        <div class="user-edit"><%= link_to 'Edit', edit_user_path(@current_user) %></div>
         <div class="user-signout"><%= link_to 'Signout', signout_path %></div>
       </div>
     </div>
     <div id="sidebar-menu">
-      <ul id="sidebar-menu-items">
-        <li id="activities-tab"><%= link_to 'Activities', activities_path %></li>
-        <li id="events-tab"><%= link_to 'Events', events_path %></li>
-        <li id="events-tab"><%= link_to 'Invites', invites_path %></li>
-      </ul>
+      <% if current_page?(user_path(@current_user)) %>
+        <ul id="sidebar-menu-items" class='nav nav-pills nav-stacked'>
+          <li class="activities active"><a data-toggle='pill'>Activities</a></li>
+          <li class="events"><a data-toggle='pill'>Events</a></li>
+          <li class="invites"><a data-toggle='pill'>Invites</a></li>
+        </ul>
+      <% else %>
+        <ul id="sidebar-menu-items">
+          <li id="back-tab" class="back"><%= link_to 'Home', user_path(@current_user) %>
+        </ul>
+      <% end %>
     </div>
   </div>
 </div>

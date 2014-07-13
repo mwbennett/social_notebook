@@ -1,7 +1,6 @@
 class ActivitiesController < ApplicationController
   def new
     @activity = Activity.new
-    @user = current_user
     @users = User.all - [current_user]
   end
 

@@ -1,31 +1,33 @@
-<%= form_for @event do |f| %>
-  <% if @event.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@event.errors.count, "error") %> prohibited the event from being saved:</h2>
-    <ul>
-    <% @event.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %> 
-
-  <%= f.label :description %>
-  <%= f.text_field :description %><br> 
-
-  <%= f.label :date %>
-  <%= f.datetime_select :date%><br>
-
-  <% event_users = @event.users %> 
-  <% @users.each do |user| %>
-    <% if event_users.include?(user) %> 
-      <%= check_box_tag 'user_ids[]', user.id, checked: true %>
-    <% else %> 
-      <%= check_box_tag 'user_ids[]', user.id %>
+<div class="col-md-10" 
+  <%= form_for @event do |f| %>
+    <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited the event from being saved:</h2>
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
     <% end %> 
-    <%= label_tag(user.id, "#{user.full_name}") %><br>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %><br> 
+
+    <%= f.label :date %>
+    <%= f.datetime_select :date%><br>
+
+    <% event_users = @event.users %> 
+    <% @users.each do |user| %>
+      <% if event_users.include?(user) %> 
+        <%= check_box_tag 'user_ids[]', user.id, checked: true %>
+      <% else %> 
+        <%= check_box_tag 'user_ids[]', user.id %>
+      <% end %> 
+      <%= label_tag(user.id, "#{user.full_name}") %><br>
+    <% end %>
+
+    <%= f.submit %>
+
   <% end %>
-
-  <%= f.submit %>
-
-<% end %>
+</div>

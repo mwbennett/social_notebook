@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
   def edit
     # before_action :user_authorization
-    @user = User.find(params[:id])
+    current_user
+    @user = @current_user
   end
   
   def update 
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    current_user
     @user = User.find(params[:id])
     @user.sync_events
 

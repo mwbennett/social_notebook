@@ -3,21 +3,35 @@
   <head>
     <title>Social Notebook</title>
     <%=stylesheet_link_tag 'application' %>
+    <%=javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <div id="wrapper">
-
+    <div id="header">
+      Social Notebook
     </div>
 
-    <div id="messages">  
-      <strong><%= session[:user_id] if session[:user_id] %></strong>
-      <strong><%= "No user logged in" unless session[:user_id] %></strong>
-      <p class="notice"><%= flash[:notice] if flash[:notice] %></p>
-      <p class="alert"><%= flash[:alert] if flash[:alert] %></p>
-    </div>
-
-    <div id="content">
+    <div id="content" class="container">
+      <div id="messages">  
+        <% if flash[:notice] %>
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <%= flash[:notice] %>
+        <% end %>
+        <% if flash[:alert] %>
+          </div>
+          <div class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+            </button>
+            <%= flash[:alert] if flash[:alert] %>
+          </div>
+        <% end %>
+      </div>
       <%= yield %>
     </div>
    

@@ -2,3 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#sidebar {
+  border-right: 2px solid slategrey;
+}
+
+#welcome-title {
+  padding-bottom: 20pt;
+  text-align: center;
+}
+
+#sign-in-form {
+  padding: 0, 20pt;
+}
+#sign-in-form h3 {
+  text-align: center;
+}

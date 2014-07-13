@@ -1,24 +1,26 @@
-<%= form_for @activity do |f| %>
-  <% if @activity.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@activity.errors.count, "error") %> prohibited the activity from being saved:</h2>
-    <ul>
-    <% @activity.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<div class="col-md-10">  
+  <%= form_for @activity do |f| %>
+    <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited the activity from being saved:</h2>
+      <ul>
+      <% @activity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %> 
+
+    <%= f.label :description %>
+    <%= f.text_field :description %><br> 
+
+    <% @users.each do |user| %>
+      <%= check_box_tag 'user_ids[]', user.id %>
+      <%= label_tag(user.id, "#{user.full_name}") %><br>
     <% end %>
-    </ul>
-  </div>
-  <% end %> 
 
-  <%= f.label :description %>
-  <%= f.text_field :description %><br> 
 
-  <% @users.each do |user| %>
-    <%= check_box_tag 'user_ids[]', user.id %>
-    <%= label_tag(user.id, "#{user.full_name}") %><br>
+    <%= f.submit %>
+
   <% end %>
-
-
-  <%= f.submit %>
-
-<% end %>
+</div>

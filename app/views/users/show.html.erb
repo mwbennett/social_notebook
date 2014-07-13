@@ -1,82 +1,76 @@
 <%= render 'shared/sidebar' %>
-
-<h2><%="#{@user.first_name} #{@user.last_name}" %></h2>
-<div class='title'>
-  <h3>Activities</h3>
-</div>
-<div id='activities-wrapper'>
-  <% @activities.each do |a| %>
-    <div class='activity-box'>
-      <h4><%= a.description %></h4>
-      <p>
-      <%= button_to "convert", activity_convert_path(a), method: :post %>
-      <% if a.users.count > 3 %>
-        <%= "With #{a.users.first.first_name} #{a.users.first.last_name}, 
-        #{a.users.second.first_name} #{a.users.second.last_name}, 
-        #{a.users.third.first_name} #{a.users.third.last_name}, and #{a.users.count - 3} others." %>
-      <% else %>
-        With 
-          <% a.users.each do |u| %>
-            <%= "#{u.first_name} #{u.last_name}, " %>
-          <% end %>
-      <% end %> 
-      </p>
-      <p>
-        <%= a.created_at %>
-      </p>
-    </div>  
-  <% end %>
-
-  <button><%= link_to 'New Activity', new_activity_path %></button>
-</div>
-
-<div class='title'>
-  <h3>Events</h3>
-</div>
-<div id='events-wrapper'>
-  <% @events.each do |a| %>
-    <div class='event-box'>
-      <h4><%= a.description %></h4>
-      <p><%= a.date %></p>
-      <p>
-      <% if a.users.count > 3 %>
-        <%= "With #{a.users.first.full_name}, 
-        #{a.users.second.full_name}, 
-        #{a.users.third.full_name}, and #{a.users.count - 3} others." %>
-      <% else %>
-        With 
-        <% a.users.each do |u| %>
-          <%= "#{u.first_name} #{u.last_name}, " %>
-        <% end %>
-      <% end %> 
-      </p>
-    </div>  
-  <% end %>
-
-  <button><%= link_to 'New Event', new_event_path %></button>
-</div>
-
-<div class='title'>
-  <h3>Invites</h3>
-</div>
-<div id='invites-wrapper'>
-  <% @invites.each do |a| %>
-    <div class='invite-box'>
-      <h4><%= a.event.description %></h4>
-
-      <strong><%= a.status %></strong>
-      
-      <% if a.status == true %>
-        <%= "Accepted" %>
-      <% elsif a.status == false %>
-        <%= "Declined" %>
-      <% else %>
-        <%= "Pending" %>
+<div class="content-wrapper col-md-10">
+  
+  <div class='activity-box'>
+    <h1>Activities</h1>
+    <button class="btn btn-sm btn-primary"><%= link_to 'New', new_activity_path %></button>
+      <% @activities.each do |a| %>
+        <div class='activityies-list'>
+          <h3><%= a.description %></h3>
+          <p>
+            <%= a.created_at.strftime("%B %d, %Y")  %>
+          </p>
+          <p>
+          <% if a.users.count > 1 %>
+            <a data-toggle="modal" data-target=".bs-example-modal-sm"><%= "With #{a.users.count} people." %></a>
+          <% else %>
+            <a data-toggle="modal" data-target=".bs-example-modal-sm"><%= "With #{a.users.count} person." %></a>
+          <% end %> 
+          </p>
+          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+              Example Text!!
+              </div>
+            </div>
+          </div>
+          <%= button_to "Creat Event", activity_convert_path(a), method: :post, class: "btn btn-sm btn-primary" %>
+        </div>  
       <% end %>
+  </div>
 
-      <%= button_to "accept", invite_accept_path(a), method: :post %>
-      <%= button_to "decline", invite_decline_path(a), method: :post %>
-    </div>  
-  <% end %>
+  <div class='event-box' style="display: none">
+    <h1>Events</h1>
+    <div class='btn btn-sm btn-primary'><%= link_to 'New', new_event_path %></div>
+    <div id='events-wrapper'>
+      <% @events.each do |a| %>
+        <div class='event-box'>
+          <h3><%= a.description %></h3>
+          <p><%= a.date.strftime("%B %d, %Y") if a.date %></p>
+          <p>
+          <% if a.users.count > 1 %>
+            <%= "With #{a.users.count} people." %>
+          <% else %>
+            <%= "With #{a.users.count} person." %>
+          <% end %> 
+          </p>
+        </div>  
+      <% end %>
+    </div>
+  </div>
+
+  <div class='invite-box' style="display: none">
+    <h1>Invites</h1>
+    <div id='invites-wrapper'>
+      <% @invites.each do |a| %>
+        <div class='invite-details'>
+          <h3><%= a.event.description %></h3>
+          <p><%= a.event.date.strftime("%B %d, %Y") if a.event.date %></p>
+          <p>
+          <% if a.status == true %>
+            <%= "Accepted" %>
+          <% elsif a.status == false %>
+            <%= "Declined" %>
+          <% else %>
+            <%= "Pending" %>
+          <% end %>
+          <div class='btn-group inline pull-left'>
+            <%= button_to "Accept", invite_accept_path(a), method: :post, class: 'btn btn-sm btn-success' %>
+            <%= button_to "Decline", invite_decline_path(a), method: :post, class: 'btn btn-sm btn-danger' %>
+          </div>
+        </div>  
+      <% end %>
+    </div>
+  </div>
+
 </div>
-
