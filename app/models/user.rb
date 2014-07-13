@@ -8,4 +8,17 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_confirmation_of :password 
   validates_presence_of :password, on: :create 
+
+  def full_name 
+    "#{first_name} #{last_name}"  
+  end
+
+  def sync_events
+    self.hosted_events.each do |event|
+      if Time.now > event.date ||= Time.now
+        event.convert_to_activity
+      end
+    end
+  end
+
 end

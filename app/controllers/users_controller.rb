@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save 
-      redirect_to user_path(current_user)
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       render new_user_path
     end
@@ -30,8 +31,11 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @user.sync_events
+
     @activities = @user.hosted_activities.order("created_at DESC")
     @events = @user.hosted_events.order("created_at DESC")
+    @invites = @user.invites.order("created_at DESC")
   end
 
   def destroy 

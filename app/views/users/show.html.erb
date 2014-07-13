@@ -1,16 +1,19 @@
+<%= render 'shared/sidebar' %>
 
+<h2><%="#{@user.first_name} #{@user.last_name}" %></h2>
 <div class='title'>
   <h3>Activities</h3>
 </div>
-<div id='activities-box'>
+<div id='activities-wrapper'>
   <% @activities.each do |a| %>
     <div class='activity-box'>
       <h4><%= a.description %></h4>
       <p>
+      <%= button_to "convert", activity_convert_path(a), method: :post %>
       <% if a.users.count > 3 %>
         <%= "With #{a.users.first.first_name} #{a.users.first.last_name}, 
         #{a.users.second.first_name} #{a.users.second.last_name}, 
-        #{a.user.third.first_name} #{a.users.third.last_name}, and #{a.users.count - 3} others." %>
+        #{a.users.third.first_name} #{a.users.third.last_name}, and #{a.users.count - 3} others." %>
       <% else %>
         With 
           <% a.users.each do |u| %>
@@ -30,16 +33,16 @@
 <div class='title'>
   <h3>Events</h3>
 </div>
-<div id='events-box'>
+<div id='events-wrapper'>
   <% @events.each do |a| %>
     <div class='event-box'>
       <h4><%= a.description %></h4>
       <p><%= a.date %></p>
       <p>
       <% if a.users.count > 3 %>
-        <%= "With #{a.users.first.first_name} #{a.users.first.last_name}, 
-        #{a.users.second.first_name} #{a.users.second.last_name}, 
-        #{a.user.third.first_name} #{a.users.third.last_name}, and #{a.users.count - 3} others." %>
+        <%= "With #{a.users.first.full_name}, 
+        #{a.users.second.full_name}, 
+        #{a.users.third.full_name}, and #{a.users.count - 3} others." %>
       <% else %>
         With 
         <% a.users.each do |u| %>
@@ -51,5 +54,29 @@
   <% end %>
 
   <button><%= link_to 'New Event', new_event_path %></button>
+</div>
+
+<div class='title'>
+  <h3>Invites</h3>
+</div>
+<div id='invites-wrapper'>
+  <% @invites.each do |a| %>
+    <div class='invite-box'>
+      <h4><%= a.event.description %></h4>
+
+      <strong><%= a.status %></strong>
+      
+      <% if a.status == true %>
+        <%= "Accepted" %>
+      <% elsif a.status == false %>
+        <%= "Declined" %>
+      <% else %>
+        <%= "Pending" %>
+      <% end %>
+
+      <%= button_to "accept", invite_accept_path(a), method: :post %>
+      <%= button_to "decline", invite_decline_path(a), method: :post %>
+    </div>  
+  <% end %>
 </div>
 

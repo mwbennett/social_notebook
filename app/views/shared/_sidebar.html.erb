@@ -1,0 +1,18 @@
+<div id="sidebar">
+  <div id="sidebar-wrapper" >
+    <div id="current-user-space">
+      <div id="current-user">
+        <div class="user-name"><%= "#{@user.first_name} #{@user.last_name}" %></div>
+        <div class="user-edit"><%= link_to 'Edit', edit_user_path %></div>
+        <div class="user-signout"><%= link_to 'Signout', signout_path %></div>
+      </div>
+    </div>
+    <div id="sidebar-menu">
+      <ul id="sidebar-menu-items">
+        <li id="activities-tab"><%= link_to 'Activities', activities_path %></li>
+        <li id="events-tab"><%= link_to 'Events', events_path %></li>
+        <li id="events-tab"><%= link_to 'Invites', invites_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>

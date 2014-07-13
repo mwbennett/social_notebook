@@ -2,13 +2,25 @@ class ActivitiesController < ApplicationController
   def new
     @activity = Activity.new
     @user = current_user
+    @users = User.all - [current_user]
   end
+
+  def convert 
+    event = Event.new
+    activity = Activity.find(params[:activity_id])
+    event.description = activity.description 
+    event.users += activity.users
+    event.host = activity.host
+    event.save
+    redirect_to edit_event_path(event)
+  end 
 
   def create
     @activity = Activity.new(activity_params)
     @activity.host = current_user 
-    @users = User.all
+    attendees = params[:user_ids].map {|id| User.find(id)}
     if @activity.save 
+      @activity.users += attendees
       redirect_to user_path(current_user)
     else
       render new_activity_path

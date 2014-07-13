@@ -5,7 +5,17 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :delete]
   resources :users
   resources :activities
-  resources :events
+
+  resources :activities do 
+    post 'convert'
+  end
+
+  resources :events 
+
+  resources :invites do 
+    post 'accept'
+    post 'decline'
+  end
 
   get '/signin', to: 'sessions#new'
   get '/signout', to: 'sessions#destroy', via: :delete 

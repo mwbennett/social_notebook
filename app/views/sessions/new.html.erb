@@ -1,11 +1,29 @@
-<%= form_for :user, :url => {:controller => 'sessions', :action => 'create'} do |f| %>
-  
-  <%= f.label :email %>
-  <%= f.text_field :email %><br>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br>
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-  
-  <%= f.submit 'Sign In' %>
-<% end %>
+<div id="welcome-wrapper">
+  <div id="welcome-wrapper-inner">
+
+    <div id="header">
+      <h3 id="app-title">Social Notebook</h3>
+    </div>
+
+    <div id="welcome-title">
+      <h3 class="cover-heading">Social Notebook helps you keep in touch with your people.</h3>
+    </div>
+
+    <div id="welcome-message">  
+      <h4 class="lead">Stop forgetting to catch up with that old friend you ran into last week, and don't let your montly dinner with your brother slip your mind. Easily track your activities, schedule events, and stop missing the people you actually want to see.</h4>
+    </div>
+    <div id="sign-in-form">
+      <%= form_for @user, :url => {:controller => 'sessions', :action => 'create'} do |f| %>
+
+        <%= f.label :email %>
+        <%= f.text_field :email %><br>
+        <%= f.label :password %>
+        <%= f.password_field :password %><br>
+        
+        <%= f.submit 'Sign In' %><br>
+      <% end %>
+
+      <%= render 'shared/form' %>
+    </div>
+  </div>
+</div>
