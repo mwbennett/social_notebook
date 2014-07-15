@@ -1,5 +1,4 @@
 
-<div>
   <%= form_for @user, class: "form-horizontal" do |f| %>
     <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +10,11 @@
       </ul>
     </div>
     <% end %> 
-    <legend>Sign Up</legend>
+    <% if @current_user && current_page?(edit_user_path) %>
+      <legend>Edit Profile</legend>
+    <% else %>
+      <legend>Sign Up</legend>
+    <% end %>
     <div class="form-group">
       <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
     </div>
@@ -28,4 +31,3 @@
     <%= f.submit class: "btn btn-primary" %>
 
   <% end %>
-</div>

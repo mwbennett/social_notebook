@@ -2,13 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#sidebar {
-  border-right: 2px solid slategrey;
+
+#footer {
+  text-align: center;
 }
 
-#welcome-title {
-  padding-bottom: 20pt;
-  text-align: center;
+#header {
+  height: 45px;
+  width: 100%;
+  background-color: rgb(44,62,80);
+  line-height: 45px;
+}
+#header a {
+  color: white;
+  text-decoration: bold;
+  margin-left: 20pt;
+  font-size: 13pt;
+}
+
+#sidebar {
+  border-right: 2px solid slategrey;
 }
 
 #sign-in-form {
@@ -17,3 +30,13 @@
 #sign-in-form h3 {
   text-align: center;
 }
+
+#welcome-title {
+  padding-bottom: 20pt;
+  padding-top: 20pt;
+  text-align: center;
+}
+
+
+
+

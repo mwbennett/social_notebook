@@ -1,5 +1,5 @@
-<div class="col-md-10">  
-  <%= form_for @activity do |f| %>
+<div class="col-md-5 col-md-offset-1">  
+  <%= form_for @activity, class: "form-horizontal" do |f| %>
     <% if @activity.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@activity.errors.count, "error") %> prohibited the activity from being saved:</h2>
@@ -10,17 +10,17 @@
       </ul>
     </div>
     <% end %> 
-
-    <%= f.label :description %>
-    <%= f.text_field :description %><br> 
+    <div class="form-group">
+      <%= f.text_field :description, class: "form-control", placeholder: "Activity Name" %>
+    </div>
 
     <% @users.each do |user| %>
       <%= check_box_tag 'user_ids[]', user.id %>
       <%= label_tag(user.id, "#{user.full_name}") %><br>
     <% end %>
+    <br>
 
-
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
 
   <% end %>
 </div>

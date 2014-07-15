@@ -1,6 +1,5 @@
-// $('.activities').on('click', function() {
-//   console.log('clicked');
-// })
+
+ready = ->
 
 $(function() {
   $('.activities').on('click', function(){
@@ -32,3 +31,10 @@ $('ul.nav-pills li a').on('click', function () {
   $('ul.nav-pills li.active').removeClass('active')
   $(this).parent('li').addClass('active')
 })
+
+$(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker({
+      autoclose: true;
+      format: "DD/MM/d/yyyy";
+    });
+  })

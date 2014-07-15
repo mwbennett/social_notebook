@@ -1,33 +1,44 @@
 <%= render 'shared/sidebar' %>
-<div class="content-wrapper col-md-10">
+<div class="content-wrapper col-md-9 col-md-offset-1">
   
   <div class='activity-box'>
     <h1>Activities</h1>
-    <button class="btn btn-sm btn-primary"><%= link_to 'New', new_activity_path %></button>
-      <% @activities.each do |a| %>
-        <div class='activityies-list'>
-          <h3><%= a.description %></h3>
-          <p>
-            <%= a.created_at.strftime("%B %d, %Y")  %>
-          </p>
-          <p>
-          <% if a.users.count > 1 %>
-            <a data-toggle="modal" data-target=".bs-example-modal-sm"><%= "With #{a.users.count} people." %></a>
-          <% else %>
-            <a data-toggle="modal" data-target=".bs-example-modal-sm"><%= "With #{a.users.count} person." %></a>
-          <% end %> 
-          </p>
-          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-              <div class="modal-content">
-              Example Text!!
-              </div>
-            </div>
-          </div>
-          <%= button_to "Creat Event", activity_convert_path(a), method: :post, class: "btn btn-sm btn-primary" %>
-        </div>  
-      <% end %>
-  </div>
+    <button class="btn btn-sm btn-primary new-activity-event"><%= link_to 'New', new_activity_path %></button>
+    <% @activities.each do |a| %>
+      <div class='activities-list'>
+        <h3><%= a.description %></h3>
+        <p>
+          <%= a.created_at.strftime("%B %d, %Y")  %>
+        </p>
+        <p>
+        <% if a.users.count > 1 %>
+          <a data-toggle="modal" data-target=<%= "##{a.id}" %>><%= "With #{a.users.count} people." %></a>
+        <% else %>
+          <a data-toggle="modal" data-target=<%= "##{a.id}" %>><%= "With #{a.users.count} person." %></a>
+        <% end %> 
+        </p>
+        <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id=<%= "#{a.id}" %>>
+          <div class="modal-dialog modal-sm">
+            
+            <div class="modal-content">
+              
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <div class="modal-title" id="myModalLabel"><h4><%= a.description %></h4><h5 class="text-info">Who was there?</h5></div>
+              </div> <!-- modal header -->
+              <div class="modal-body">
+                <h6><%= @current_user.full_name %> (You)</h6>
+                <% a.users.each do |user| %>
+                  <h6 class='attendee-list'><%= user.full_name %><h6>
+                <% end %>
+              </div> <!-- modal-body  -->
+            </div> <!-- modal-content -->
+          </div> <!-- modal-dialogue -->
+        </div> <!-- modal fade -->
+        <%= button_to "Creat Event", activity_convert_path(a), method: :post, class: "btn btn-sm btn-default" %>
+      </div> <!-- activities-list -->
+    <% end %>
+  </div> <!-- activity-box -->
 
   <div class='event-box' style="display: none">
     <h1>Events</h1>
@@ -37,13 +48,30 @@
         <div class='event-box'>
           <h3><%= a.description %></h3>
           <p><%= a.date.strftime("%B %d, %Y") if a.date %></p>
-          <p>
           <% if a.users.count > 1 %>
-            <%= "With #{a.users.count} people." %>
+            <a data-toggle="modal" data-target=<%= "##{a.id}" %>><%= "With #{a.users.count} people." %></a>
           <% else %>
-            <%= "With #{a.users.count} person." %>
+            <a data-toggle="modal" data-target=<%= "##{a.id}" %>><%= "With #{a.users.count} person." %></a>
           <% end %> 
           </p>
+          <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id=<%= "#{a.id}" %>>
+            <div class="modal-dialog modal-sm">
+              
+              <div class="modal-content">
+                
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <div class="modal-title" id="myModalLabel"><h4><%= a.description %></h4><h5 class="text-info">Who's invited?</h5></div>
+                </div> <!-- modal header -->
+                <div class="modal-body">
+                  <h6><%= @current_user.full_name %> (You)</h6>
+                  <% a.users.each do |user| %>
+                    <h6 class='attendee-list'><%= user.full_name %><h6>
+                  <% end %>
+                </div> <!-- modal-body  -->
+              </div> <!-- modal-content -->
+            </div> <!-- modal-dialogue -->
+          </div> <!-- modal fade -->
         </div>  
       <% end %>
     </div>

@@ -1,5 +1,5 @@
-<div class="col-md-10" 
-  <%= form_for @event do |f| %>
+<div class="col-md-5 col-md-offset-1">
+  <%= form_for @event, class: "form-horizontal" do |f| %>
     <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited the event from being saved:</h2>
@@ -10,24 +10,31 @@
       </ul>
     </div>
     <% end %> 
-
-    <%= f.label :description %>
-    <%= f.text_field :description %><br> 
-
-    <%= f.label :date %>
-    <%= f.datetime_select :date%><br>
-
-    <% event_users = @event.users %> 
-    <% @users.each do |user| %>
-      <% if event_users.include?(user) %> 
-        <%= check_box_tag 'user_ids[]', user.id, checked: true %>
-      <% else %> 
-        <%= check_box_tag 'user_ids[]', user.id %>
-      <% end %> 
-      <%= label_tag(user.id, "#{user.full_name}") %><br>
+    <% if current_page?(new_event_path) %>
+      <legend>Create and Event</legend>
+    <% else %>
+      <legend>Edit Event</legend>
     <% end %>
+    <div class="form-group">
+    <%= f.text_field :description, class: "form-control", placeholder: "Title" %>
+    </div>
+    <div class="form-group">
+    <%= f.text_field :date, class: "form-control", 'data-behaviour' => 'datepicker', placeholder: "Date" %>
+    </div>
+    <div class="form-group">
+      <% event_users = @event.users %> 
+      <% @users.each do |user| %>
+        <% if event_users.include?(user) %> 
+          <%= check_box_tag 'user_ids[]', user.id, checked: true %>
+        <% else %> 
+          <%= check_box_tag 'user_ids[]', user.id %>
+        <% end %> 
+        
+        <%= label_tag(user.id, "#{user.full_name}") %><br>
+      <% end %>
+    </div>
 
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
 
   <% end %>
 </div>
