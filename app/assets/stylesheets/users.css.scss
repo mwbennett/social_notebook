@@ -6,8 +6,18 @@
 .activity-box {
 
 }
-
-.invite-details .btn-group {
-  display: inline-block;
+h1 {
+  text-align: center;
 }
 
+.activity-event-date {
+  float: right;
+}
+
+.new-activity-event {
+  margin: 0 auto;
+}
+
+.new-activity-event a {
+  color: white;
+}

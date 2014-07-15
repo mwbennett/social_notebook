@@ -28,11 +28,11 @@ class ActivitiesController < ApplicationController
   
   def edit
     # before_action :activity_authentication
-    @activity = Activity.find(params[:id])
+    @activity = Activity.find(params[:activity_id])
   end
 
   def update
-    @activity = Activity.find(params[:id])
+    @activity = Activity.find(params[:activity_id])
 
     if @activity.update(activity_params)
       redirect_to @activity

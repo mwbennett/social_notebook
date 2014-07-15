@@ -7,36 +7,39 @@
   </head>
 
   <body>
-    <div id="header">
-      <%= link_to 'Social Notebook', root_path %>
-    </div>
-
-    <div id="content" class="container">
-      <div id="messages">  
-        <% if flash[:notice] %>
-          <div class="alert alert-success alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert">
-              <span aria-hidden="true">&times;</span>
-              <span class="sr-only">Close</span>
-            </button>
-            <%= flash[:notice] %>
-        <% end %>
-        <% if flash[:alert] %>
-          </div>
-          <div class="alert alert-danger alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert">
-              <span aria-hidden="true">&times;</span>
-              <span class="sr-only">Close</span>
-            </button>
-            <%= flash[:alert] if flash[:alert] %>
-          </div>
-        <% end %>
+    <div id="wrap">  
+      <div id="header">
+        <%= link_to 'Social Notebook', root_path %>
       </div>
-      <%= yield %>
+
+      <div id="content" class="container">
+        <div id="messages">  
+          <% if flash[:notice] %>
+            <div class="alert alert-success alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+              </button>
+              <%= flash[:notice] %>
+          <% end %>
+          <% if flash[:alert] %>
+            </div>
+            <div class="alert alert-danger alert-dismissable">
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+              </button>
+              <%= flash[:alert] if flash[:alert] %>
+            </div>
+          <% end %>
+        </div>
+        <%= yield %>
+      </div>
     </div>
-   
     <div id="footer">
-      <p>Created by <a href="http://github.com/mwbennett">Mark Bennett</a>.</p>
+      <div class="container">
+        <p>Created by <a href="http://github.com/mwbennett">Mark Bennett</a>.</p>
+      </div>
     </div>
 
     </div> 

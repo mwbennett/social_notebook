@@ -20,7 +20,8 @@ class EventsController < ApplicationController
   end
   
   def edit
-    #before_action :event_authentication
+    # before_action :event_authentication
+    binding.pry
     @event = Event.find(params[:id])
     @users = User.all - [current_user]
   end
@@ -29,7 +30,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     invitee_ids = params[:user_ids].map {|id| id.to_i }
     invitees = invitee_ids.map {|id| User.find(id)}
-    binding.pry
 
     if @event.update(event_params)
       @event.users = invitees  
@@ -51,7 +51,7 @@ class EventsController < ApplicationController
   end
 
   def destroy 
-    before_action :event_authorization
+    # before_action :event_authorization
     
     @event = Event.find(params[:id])
     @event.destroy 

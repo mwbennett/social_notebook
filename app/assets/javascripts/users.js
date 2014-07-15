@@ -1,6 +1,4 @@
 
-ready = ->
-
 $(function() {
   $('.activities').on('click', function(){
     $('.activity-box').show();
@@ -33,8 +31,9 @@ $('ul.nav-pills li a').on('click', function () {
 })
 
 $(document).ready(function(){
-    $('[data-behaviour~=datepicker]').datepicker({
-      autoclose: true;
-      format: "DD/MM/d/yyyy";
-    });
-  })
+  $('[data-behaviour~=datepicker]').datepicker({
+    format: "MM d, yyyy",
+    autoclose: true,
+    todayHighlight: true
+  });
+})

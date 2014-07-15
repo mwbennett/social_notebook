@@ -10,11 +10,6 @@
       </ul>
     </div>
     <% end %> 
-    <% if current_page?(new_event_path) %>
-      <legend>Create and Event</legend>
-    <% else %>
-      <legend>Edit Event</legend>
-    <% end %>
     <div class="form-group">
     <%= f.text_field :description, class: "form-control", placeholder: "Title" %>
     </div>

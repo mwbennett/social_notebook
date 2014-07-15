@@ -10,9 +10,7 @@
       </ul>
     </div>
     <% end %> 
-    <% if @current_user && current_page?(edit_user_path) %>
-      <legend>Edit Profile</legend>
-    <% else %>
+    <% unless @current_user && current_page?(edit_user_path) %>
       <legend>Sign Up</legend>
     <% end %>
     <div class="form-group">
@@ -29,5 +27,4 @@
     </div>
 
     <%= f.submit class: "btn btn-primary" %>
-
   <% end %>

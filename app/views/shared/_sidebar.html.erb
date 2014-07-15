@@ -13,13 +13,13 @@
     <hr>
     <div id="sidebar-menu">
       <% if current_page?(user_path(@current_user)) %>
-        <ul id="sidebar-menu-items" class='nav nav-pills nav-stacked'>
+        <ul class="sidebar-menu-items nav nav-pills nav-stacked">
           <li class="activities active"><a data-toggle='pill'>Activities</a></li>
           <li class="events"><a data-toggle='pill'>Events</a></li>
           <li class="invites"><a data-toggle='pill'>Invites</a></li>
         </ul>
       <% else %>
-        <ul id="sidebar-menu-items">
+        <ul class="sidebar-menu-items nav nav-pills nav-stacked">
           <li id="back-tab" class="back"><%= link_to 'Home', user_path(@current_user) %>
         </ul>
       <% end %>
