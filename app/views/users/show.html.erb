@@ -4,6 +4,7 @@
   <div class='activity-box'>
     <h1>Activities</h1>
     <button class="btn btn-sm btn-success new-activity-event"><%= link_to 'New', new_activity_path %></button>
+    <%= "You haven't logged any acivities yet..." if @activities.count == 0 %>
     <% @activities.each do |a| %>
       <div class='activities-list'>
         <h3><%= a.description %></h3>
@@ -44,6 +45,7 @@
   <div class='event-box' style="display: none">
     <h1>Events</h1>
     <button class='btn btn-sm btn-success new-activity-event'><%= link_to 'New', new_event_path %></button>
+    <%= "You don't have any events yet..." if @activities.count == 0 %>
     <div id='events-wrapper'>
       <% @events.each do |a| %>
         <h3><%= a.description %></h3>
@@ -87,6 +89,7 @@
   <div class='invite-box' style="display: none">
     <h1>Invites</h1>
     <div id='invites-wrapper'>
+     <%= "You don't have any events yet..." if @invites.count == 0 %> 
       <% @invites.each do |a| %>
         <div class='invite-details'>
           <h3><%= a.event.description %></h3>

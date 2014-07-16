@@ -17,9 +17,9 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(activity_params)
     @activity.host = current_user 
-    attendees = params[:user_ids].map {|id| User.find(id)} if attendees
+    attendees = params[:user_ids].map {|id| User.find(id)}
     if @activity.save 
-      @activity.users += attendees if attendees
+      @activity.users += attendees 
       redirect_to user_path(current_user)
     else
       render new_activity_path
@@ -29,6 +29,7 @@ class ActivitiesController < ApplicationController
   def edit
     # before_action :activity_authentication
     @activity = Activity.find(params[:activity_id])
+    @users = User.all - [current_user]
   end
 
   def update

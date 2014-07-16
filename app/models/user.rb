@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password 
   validates_presence_of :password, on: :create 
 
+  validates_presence_of :first_name, on: [:create, :update]
+  validates_presence_of :last_name, on: [:create, :update]
   validates :email, uniqueness: true
 
   def full_name 

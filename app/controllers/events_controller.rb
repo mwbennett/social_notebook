@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     if @event.save 
       date = params[:event][:date]
       @event.date = DateTime.strptime(date, '%m/%d/%Y %H:%M %p')
-      @event.users += invitees
+      @event.users += invitees if invitees
       @event.users.each do |user|
         @event.send_invite(user.id)
       end
@@ -31,11 +31,11 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     invitee_ids = params[:user_ids].map {|id| id.to_i }
-    invitees = invitee_ids.map {|id| User.find(id)}
+    invitees = invitee_ids.map {|id| User.find(id)} if invitees
     if @event.update(event_params)
       date = params[:event][:date]
       @event.date = DateTime.strptime(date, '%m/%d/%Y %H:%M %p')
-      @event.users = invitees  
+      @event.users = invitees if invitees
       @event.users.each do |user|
         @event.send_invite(user.id) if Invite.where(user_id: user.id, event_id: @event.id).empty?
       end
