@@ -43,7 +43,7 @@
 
   <div class='event-box' style="display: none">
     <h1>Events</h1>
-    <div class='btn btn-sm btn-info new-activity-event'><%= link_to 'New', new_event_path %></div>
+    <button class='btn btn-sm btn-info new-activity-event'><%= link_to 'New', new_event_path %></button>
     <div id='events-wrapper'>
       <% @events.each do |a| %>
         <h3><%= a.description %></h3>
@@ -54,7 +54,7 @@
           <a data-toggle="modal" data-target=<%= "##{a.id}" %>><%= "With #{a.users.count} person." %></a>
         <% end %> 
         </p>
-        <%= button_to "Edit Event", edit_event_path(a), class: "btn btn-sm btn-default" %>
+        <%= button_to "Edit Event", edit_event_path(a), method: 'get', class: "btn btn-sm btn-default" %>
         <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id=<%= "#{a.id}" %>>
           <div class="modal-dialog modal-sm">
             

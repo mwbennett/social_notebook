@@ -13,8 +13,16 @@
     <div class="form-group">
     <%= f.text_field :description, class: "form-control", placeholder: "Title" %>
     </div>
-    <div class="form-group">
-    <%= f.text_field :date, class: "form-control", 'data-behaviour' => 'datepicker', placeholder: "Date" %>
+    <div class="row">
+      <div class='col-sm-6 col-md-12  '>
+        <div class="form-group">
+          <div class='input-group date' id='datetimepicker1'>
+            <input id="event_date" name="event[date]" type='text' class="form-control" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <% event_users = @event.users %> 

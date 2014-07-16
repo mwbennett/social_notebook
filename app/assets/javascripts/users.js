@@ -30,10 +30,6 @@ $('ul.nav-pills li a').on('click', function () {
   $(this).parent('li').addClass('active')
 })
 
-$(document).ready(function(){
-  $('[data-behaviour~=datepicker]').datepicker({
-    format: "MM d, yyyy",
-    autoclose: true,
-    todayHighlight: true
-  });
-})
+$(function () {
+  $('#datetimepicker1').datetimepicker()
+});

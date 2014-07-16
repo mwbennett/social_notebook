@@ -21,12 +21,12 @@ class EventsController < ApplicationController
   
   def edit
     # before_action :event_authentication
-    binding.pry
     @event = Event.find(params[:id])
     @users = User.all - [current_user]
   end
 
   def update
+    binding.pry
     @event = Event.find(params[:id])
     invitee_ids = params[:user_ids].map {|id| id.to_i }
     invitees = invitee_ids.map {|id| User.find(id)}
