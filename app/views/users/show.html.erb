@@ -3,7 +3,7 @@
   
   <div class='activity-box'>
     <h1>Activities</h1>
-    <button class="btn btn-sm btn-info new-activity-event"><%= link_to 'New', new_activity_path %></button>
+    <button class="btn btn-sm btn-success new-activity-event"><%= link_to 'New', new_activity_path %></button>
     <% @activities.each do |a| %>
       <div class='activities-list'>
         <h3><%= a.description %></h3>
@@ -43,7 +43,7 @@
 
   <div class='event-box' style="display: none">
     <h1>Events</h1>
-    <button class='btn btn-sm btn-info new-activity-event'><%= link_to 'New', new_event_path %></button>
+    <button class='btn btn-sm btn-success new-activity-event'><%= link_to 'New', new_event_path %></button>
     <div id='events-wrapper'>
       <% @events.each do |a| %>
         <h3><%= a.description %></h3>
@@ -54,7 +54,13 @@
           <a data-toggle="modal" data-target=<%= "##{a.id}" %>><%= "With #{a.users.count} person." %></a>
         <% end %> 
         </p>
-        <%= button_to "Edit Event", edit_event_path(a), method: 'get', class: "btn btn-sm btn-default" %>
+        <div class="btn-pair">
+          <%= button_to "Edit", edit_event_path(a), method: 'get', class: "btn btn-sm btn-default" %>
+        </div>
+        <div class="btn-pair">
+          <%= button_to "Delete", "/events/#{a.id}", method: 'delete', class: "btn btn-sm btn-danger btn-delete" %>
+        </div>
+        <br class="clear-float">
         <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id=<%= "#{a.id}" %>>
           <div class="modal-dialog modal-sm">
             
@@ -85,7 +91,7 @@
         <div class='invite-details'>
           <h3><%= a.event.description %></h3>
           <p class="activity-event-date"><%= a.event.date.strftime("%B %d, %Y") if a.event.date %></p>
-          <p>
+          <p>Status:
           <% if a.status == true %>
             <%= "Accepted" %>
           <% elsif a.status == false %>
@@ -93,10 +99,13 @@
           <% else %>
             <%= "Pending" %>
           <% end %>
-          <div class='btn-group inline pull-left'>
-            <%= button_to "Accept", invite_accept_path(a), method: :post, class: 'btn btn-sm btn-success' %>
-            <%= button_to "Decline", invite_decline_path(a), method: :post, class: 'btn btn-sm btn-danger' %>
+          <div class='btn-pair btn-accept'>
+            <%= button_to "Accept", invite_accept_path(a), method: :post, class: 'btn btn-sm btn-success btn-invite' %>
           </div>
+          <div class='btn-pair btn-decline'>
+            <%= button_to "Decline", invite_decline_path(a), method: :post, class: 'btn btn-sm btn-danger btn-invite' %>
+          </div>
+          <br class="clear-float">
         </div>  
       <hr>
       <% end %>

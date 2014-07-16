@@ -9,11 +9,14 @@ class EventsController < ApplicationController
     @event.host = current_user 
     invitees = params[:user_ids].map {|id| User.find(id)}
     if @event.save 
+      date = params[:event][:date]
+      @event.date = DateTime.strptime(date, '%m/%d/%Y %H:%M %p')
       @event.users += invitees
       @event.users.each do |user|
         @event.send_invite(user.id)
       end
       redirect_to user_path(current_user)
+      @event.save
     else
       render new_event_path
     end
@@ -26,12 +29,12 @@ class EventsController < ApplicationController
   end
 
   def update
-    binding.pry
     @event = Event.find(params[:id])
     invitee_ids = params[:user_ids].map {|id| id.to_i }
     invitees = invitee_ids.map {|id| User.find(id)}
-
     if @event.update(event_params)
+      date = params[:event][:date]
+      @event.date = DateTime.strptime(date, '%m/%d/%Y %H:%M %p')
       @event.users = invitees  
       @event.users.each do |user|
         @event.send_invite(user.id) if Invite.where(user_id: user.id, event_id: @event.id).empty?
@@ -40,6 +43,7 @@ class EventsController < ApplicationController
       Invite.where(event_id: @event.id).each do |thing|
         thing.destroy if !invitee_ids.include?(thing.user_id)
       end
+      @event.save
       redirect_to current_user
     else
       render 'edit'
@@ -54,6 +58,7 @@ class EventsController < ApplicationController
     # before_action :event_authorization
     
     @event = Event.find(params[:id])
+    @event.invites.destroy_all
     @event.destroy 
 
     redirect_to root_path
@@ -63,7 +68,7 @@ end
 private 
   def event_params 
     params.require(:event)
-    .permit(:description, :date, :users)
+    .permit(:description, :users)
   end
 
   def event_authorization
