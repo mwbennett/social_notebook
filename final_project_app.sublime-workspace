@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"rails",
+				"rails_12factor"
+			],
+			[
+				"l",
+				"last_name"
+			],
+			[
+				"validate",
+				"validates_presence_of"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"first",
+				"first_name"
+			],
+			[
+				"activity_",
+				"activity_params"
+			],
+			[
+				"if",
+				"if	if … end"
+			],
+			[
 				"pri",
 				"primes_arr"
 			],
@@ -38,14 +86,6 @@
 			[
 				"font",
 				"font-size"
-			],
-			[
-				"text",
-				"text-decoration"
-			],
-			[
-				"margin",
-				"margin"
 			],
 			[
 				"email",
@@ -156,10 +196,6 @@
 				"text-top"
 			],
 			[
-				"fon",
-				"font-size"
-			],
-			[
 				"background",
 				"background-color"
 			]
@@ -168,9 +204,50 @@
 	"buffers":
 	[
 		{
+			"file": "app/controllers/activities_controller.rb",
 			"settings":
 			{
-				"buffer_size": 0,
+				"buffer_size": 1598,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/user.rb",
+			"settings":
+			{
+				"buffer_size": 833,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/events_controller.rb",
+			"settings":
+			{
+				"buffer_size": 2014,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/event.rb",
+			"settings":
+			{
+				"buffer_size": 571,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/sessions/new.html.erb",
+			"settings":
+			{
+				"buffer_size": 1260,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 1578,
 				"line_ending": "Unix"
 			}
 		}
@@ -199,6 +276,64 @@
 	},
 	"file_history":
 	[
+		"/Users/markbennett/Sites/final-project-app/config/database.yml",
+		"/Users/markbennett/Sites/final-project-app/app/views/shared/_sidebar.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/views/users/show.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/models/activity.rb",
+		"/Users/markbennett/Sites/final-project-app/Gemfile",
+		"/Users/markbennett/Sites/final-project-app/app/views/events/new.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/views/activities/_form.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/views/events/_form.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/views/layouts/application.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/assets/stylesheets/users.css.scss",
+		"/Users/markbennett/Sites/final-project-app/app/assets/javascripts/users.js",
+		"/Users/markbennett/Sites/final-project-app/app/views/sessions/new.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/models/event.rb",
+		"/Users/markbennett/Sites/final-project-app/app/views/activities/new.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/models/user.rb",
+		"/Users/markbennett/Sites/final-project-app/app/assets/stylesheets/sessions.css.scss",
+		"/Users/markbennett/Sites/final-project-app/vendor/assets/stylesheets/bootstrap.css",
+		"/Users/markbennett/Sites/final-project-app/app/controllers/events_controller.rb",
+		"/Users/markbennett/Sites/final-project-app/app/assets/javascripts/application.js",
+		"/Users/markbennett/Sites/final-project-app/app/views/events/edit.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/controllers/users_controller.rb",
+		"/Users/markbennett/Sites/final-project-app/app/controllers/activities_controller.rb",
+		"/Users/markbennett/Sites/final-project-app/app/views/shared/_form.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/assets/stylesheets/events.css.scss",
+		"/Users/markbennett/Sites/final-project-app/app/assets/javascripts/welcome.js.coffee",
+		"/Users/markbennett/Sites/final-project-app/app/assets/stylesheets/application.css",
+		"/Users/markbennett/Sites/final-project-app/app/assets/javascripts/events.js.coffee",
+		"/Users/markbennett/Sites/final-project-app/app/views/users/edit.html.erb",
+		"/Users/markbennett/Sites/final-project-app/db/schema.rb",
+		"/Users/markbennett/Sites/final-project-app/app/views/events/show.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/assets/javascripts/sessions.js.coffee",
+		"/Users/markbennett/Sites/final-project-app/app/controllers/sessions_controller.rb",
+		"/Users/markbennett/Sites/final-project-app/app/controllers/application_controller.rb",
+		"/Users/markbennett/Sites/final-project-app/config/routes.rb",
+		"/Users/markbennett/Sites/final-project-app/vendor/assets/javascripts/bootstrap.js",
+		"/Users/markbennett/Sites/final-project-app/app/controllers/invites_controller.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140712211228_add_date_to_activities_table.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140712193622_change_status_datatype.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140712004326_add_invites_table.rb",
+		"/Users/markbennett/Sites/final-project-app/app/models/invite.rb",
+		"/Users/markbennett/Sites/final-project-app/app/views/users/new.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/views/users/_form.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/views/layouts/sessions.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/models/intive.rb",
+		"/Users/markbennett/Sites/final-project-app/app/views/activities/edit.html.erb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140706195630_fix_activity_host_name.rb",
+		"/Users/markbennett/Sites/final-project-app/config/environment.rb",
+		"/Users/markbennett/Sites/final-project-app/app/assets/stylesheets/activities.css.scss",
+		"/Users/markbennett/Sites/final-project-app/app/controllers/welcome_controller.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140702003250_add_owner_to_activities.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140702002817_fix_password_column_name.rb",
+		"/Users/markbennett/Sites/final-project-app/app/views/welcome/index.html.erb",
+		"/Users/markbennett/Sites/final-project-app/app/views/layouts/_login.html.erb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140625001211_create_users.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140625013150_fix_column_name.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140625011501_create_events.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140625002926_create_users_activities.rb",
+		"/Users/markbennett/Sites/final-project-app/db/migrate/20140625002021_create_activities.rb",
 		"/Users/markbennett/Sites/final-project/config/environments/development.rb",
 		"/Users/markbennett/Sites/final-project/app/views/users/new.html.erb",
 		"/Users/markbennett/Sites/final-project/db/migrate/20140621155950_create_users.rb",
@@ -268,39 +403,7 @@
 		"/Users/markbennett/NYCDA/nycda_assignments/Lesson9Hw/Gemfile",
 		"/Users/markbennett/NYCDA/King_at_Bay/nav.css",
 		"/Users/markbennett/NYCDA/TestProject/onion.html",
-		"/Users/markbennett/NYCDA/nycda_assignments/Lesson8Hw/hw8.rb",
-		"/Users/markbennett/NYCDA/nycda_assignments/Lesson6Hw/example.html",
-		"/Users/markbennett/NYCDA/nycda_assignments/Lesson6Hw/example.css",
-		"/Users/markbennett/NYCDA/nycda_assignments/Lesson6Hw/example.js",
-		"/Users/markbennett/NYCDA/WebApp/views/stuff.erb",
-		"/Users/markbennett/Documents/ProjectEuler/PE.4.rb",
-		"/Users/markbennett/Documents/ProjectEuler/PE.3.rb",
-		"/Users/markbennett/NYCDA/King_at_Bay/home.css",
-		"/Users/markbennett/NYCDA/King_at_Bay/home.html",
-		"/Users/markbennett/NYCDA/WebApp/views.erb",
-		"/Users/markbennett/NYCDA/WebApp/home.erb",
-		"/Users/markbennett/Documents/Dash/personal_website.html",
-		"/Users/markbennett/Documents/Dash/blog_theme.html",
-		"/Users/markbennett/NYCDA/TestProject/onion.js",
-		"/Users/markbennett/NYCDA/TestProject/hw7.rb",
-		"/Users/markbennett/NYCDA/TestProject/hw8.rb",
-		"/Users/markbennett/NYCDA/PersonalSite/my_library.js",
-		"/Users/markbennett/NYCDA/TestProject/TestCode.html",
-		"/Users/markbennett/NYCDA/PersonalSite/navigation.html",
-		"/Users/markbennett/NYCDA/PersonalSite/navigation.css",
-		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesHome.css",
-		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesHome.html",
-		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesArticle.css",
-		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesArticle.html",
-		"/Users/markbennett/NYCDA/PersonalSite/homepage.css",
-		"/Users/markbennett/NYCDA/PersonalSite/homepage.html",
-		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesArticle",
-		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimesHome",
-		"/Users/markbennett/NYCDA/page2.html",
-		"/Users/markbennett/Desktop/page1.html",
-		"/Users/markbennett/NYCDA/Newspaper Website/nycdaTimes",
-		"/Users/markbennett/Desktop/page2.html",
-		"/Users/markbennett/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+		"/Users/markbennett/NYCDA/nycda_assignments/Lesson8Hw/hw8.rb"
 	],
 	"find":
 	{
@@ -311,6 +414,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -318,6 +422,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"navbar-fi",
+			"datet",
+			"current_pa",
+			"model-back",
+			"Get in the game",
 			"\n",
 			"end",
 			"t",
@@ -343,14 +452,98 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
+					"file": "app/controllers/activities_controller.rb",
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1598,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								388,
+								388
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/models/user.rb",
+					"settings":
+					{
+						"buffer_size": 833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								571,
+								553
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/events_controller.rb",
+					"settings":
+					{
+						"buffer_size": 2014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1376,
+								1376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 358.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/models/event.rb",
+					"settings":
+					{
+						"buffer_size": 571,
 						"regions":
 						{
 						},
@@ -363,7 +556,63 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/sessions/new.html.erb",
+					"settings":
+					{
+						"buffer_size": 1260,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1244,
+								1244
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Gemfile",
+					"settings":
+					{
+						"buffer_size": 1578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								400,
+								400
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -371,11 +620,6 @@
 					},
 					"type": "text"
 				}
-			]
-		},
-		{
-			"sheets":
-			[
 			]
 		}
 	],
@@ -385,7 +629,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -396,18 +640,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.453610503925,
 			1.0
 		],
 		"rows":
@@ -427,6 +664,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"user",
+				"app/models/user.rb"
+			]
 		],
 		"width": 0.0
 	},
@@ -442,6 +683,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 239.0,
+	"side_bar_width": 190.0,
 	"status_bar_visible": true
 }
